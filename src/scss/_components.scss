@@ -1,0 +1,115 @@
+// components
+.content-width {
+    max-width: 1440px;
+    padding-right: 32px;
+    padding-left: 32px;
+    margin: 0 auto;
+    @include breakpoint(sm) {
+        padding-right: 64px;
+        padding-left: 64px;
+    }
+    @include breakpoint(md) {
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+    @include breakpoint(lg) {
+        padding-right: 165px;
+        padding-left: 165px;
+    }
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 6px 6px 0px rgba($color-blue, 0.09);
+    @include transition;
+
+    &--primary {
+        background: $color-blue;
+        color: $color-white;
+        border: 2px solid $color-blue;
+        &:hover {
+            background: $color-white;
+            color: $color-blue;
+        }
+    }
+
+    &--secondary {
+        background: rgba($color-darkblue, 0.05);
+        border: 2px solid rgba($color-darkblue, 0);
+        &:hover {
+            background: $color-white;
+            border: 2px solid $color-darkblue;
+        }
+    }
+
+    &--red {
+        background: $color-red;
+        color: $color-white;
+        border: 2px solid $color-red;
+        &:hover {
+            background: $color-white;
+            color: $color-red;
+        }
+    }
+
+    &--wide {
+        padding: 10px 36px;
+    }
+    @include breakpoint(md) {
+        padding: 12px 24px;
+        &--wide {
+            padding: 10px 36px;
+        }
+    }
+}
+
+.center-info {
+    max-width: 535px;
+    margin: 0 auto 42px auto;
+
+    &__heading {
+        margin-bottom: 12px;
+    }
+    @include breakpoint(md) {
+        &__heading {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.social {
+
+    &__item {
+        padding-right: 40px;
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    &__link {
+        @include transition;
+        height: 25px;
+        width: 25px;
+        display: block;
+
+        &--fb {
+            background: center no-repeat url('../../dist/images/icon-facebook.svg');
+            &:hover {
+                background-image: url('../../dist/images/icon-facebook-red.svg');
+            }
+        }
+        
+        &--tw {
+            background: center no-repeat url('../../dist/images/icon-twitter.svg');
+            &:hover {
+                background-image: url('../../dist/images/icon-twitter-red.svg');
+            }
+        }
+    }
+}

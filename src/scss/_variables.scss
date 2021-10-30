@@ -1,0 +1,62 @@
+// variables, mixins 
+
+// font 
+$font-stack: 'Rubik', sans-serif;
+$font-weight-regular: 400;
+$font-weight-semibold: 500;
+
+// colors
+$color-blue: hsl(231, 69%, 60%);
+$color-red: hsl(0, 94%, 66%);
+$color-grey: hsl(229, 8%, 60%);
+$color-darkblue: hsl(229, 31%, 21%);
+$color-white: hsl(0, 0%, 100%);
+
+@mixin absolute($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin fixed($top, $right, $bottom, $left) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin pseudo-blue {
+    content: '';
+    background: $color-blue;
+    z-index: -1;
+}
+
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    transition:  $what $time $how;
+}
+
+@mixin breakpoint($point) {
+    @if $point == 'lg' {
+        @media only screen and (min-width: 1440px) {
+            @content;
+        }
+    } 
+    @else if $point == 'md' {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    } 
+    @else if $point == 'sm' {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == 'xs' {
+        @media only screen and (min-width: 576px) {
+            @content;
+        }
+    }
+}
